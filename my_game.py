@@ -11,7 +11,7 @@ def display_score():
 
 pygame.init()
 screen = pygame.display.set_mode((800, 400))
-pygame.display.set_caption('Runner')
+pygame.display.set_caption('The Running Alien')
 clock = pygame.time.Clock()
 test_font = pygame.font.Font('fonts/Pixeltype.ttf', 50)
 sky_surface = pygame.image.load('graphics/sky.png').convert()
@@ -77,12 +77,20 @@ while True:
         screen.blit(snail_surface, snail_rectangle)
         score = display_score()
 
+    # Start page
     elif just_started:
         player_rectangle.x = 350
+        snail_rectangle.x = 250
+        title = test_font.render('The Running Alien', False, (64, 64, 64))
+        title_rect = title.get_rect(center = (400, 100))
+        text = test_font.render('Press any key to start.', False, (64, 64, 64))
+        text_rect = text.get_rect(center = (400, 165))
         screen.blit(sky_surface, (0, 0))
         screen.blit(ground_surface, (0, 300))
         screen.blit(player_surface, player_rectangle)
         screen.blit(snail_surface, snail_rectangle)
+        screen.blit(title, title_rect)
+        screen.blit(text, text_rect)
        
     # Game over state
     else:
