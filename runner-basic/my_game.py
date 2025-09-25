@@ -65,19 +65,16 @@ while True:
             player_jumped = False
             player_rectangle.bottom = 300 
             player_gravity = 0
-
         # Check collision of player and snail
         if player_rectangle.colliderect(snail_rectangle):
             game_active = False
-
-        # Draw
         screen.blit(sky_surface, (0, 0))
         screen.blit(ground_surface, (0, 300))
         screen.blit(player_surface, player_rectangle)
         screen.blit(snail_surface, snail_rectangle)
         score = display_score()
 
-    # Start page
+    # Start page state
     elif just_started:
         player_rectangle.x = 350
         snail_rectangle.x = 250
@@ -91,7 +88,7 @@ while True:
         screen.blit(snail_surface, snail_rectangle)
         screen.blit(title, title_rect)
         screen.blit(text, text_rect)
-       
+
     # Game over state
     else:
         score_text = test_font.render(f'Your score: {score}', False, (64, 64, 64))
