@@ -7,3 +7,8 @@ Try making your own games without asking a LLM to make it for you, and see how i
 ### Game details:
   - A classic runner game with a player that can jump and avoid obstacles (basically dino game)
   - Future improvements: more enemies & enemy spawn logic, high score storage, soundtrack
+
+### How to run:
+  - Make sure you have python3 installed 
+  - Install pygame first with  `pip install pygame`
+  - go into `runner-basic` and type `python3 runner.py`
